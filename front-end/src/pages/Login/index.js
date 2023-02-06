@@ -40,18 +40,16 @@ function Login() {
   return (
     <section
       style={ { minHeight: '100vh', backgroundColor: '#fafafa' } }
-      className="d-flex align-items-center justify-content-center"
+      className="d-flex align-items-center justify-content-center d-flex flex-column"
     >
-      <form className="row gy-2 gx-3 align-items-center justify-content-center">
-
-        <h1 className="display-5 text-center">SIGN IN</h1>
-
-        <div className="d-flex justify-content-center">
-          <label htmlFor="InputEmail" className="form-label">
-            Email
+      <h5 className="display-5 text-center">SIGN IN</h5>
+      <form className="d-flex gap-3 flex-column">
+        <div className="form-group">
+          <label htmlFor="InputEmail">
+            Email address
             <input
               id="InputEmail"
-              className="form-control"
+              className="form-control w-100"
               data-testid="common_login__input-email"
               type="email"
               value={ email }
@@ -60,13 +58,12 @@ function Login() {
             />
           </label>
         </div>
-
-        <div className="d-flex justify-content-center">
-          <label htmlFor="InputPassword" className="form-label">
+        <div className="form-group">
+          <label htmlFor="InputPassword">
             Password
             <input
               id="InputPassword"
-              className="form-control"
+              className="form-control w-100"
               data-testid="common_login__input-password"
               type="password"
               value={ password }
@@ -75,12 +72,9 @@ function Login() {
             />
           </label>
         </div>
-
-        <div className="d-flex flex-column w-25 gap-3">
-          {/* // className="d-flex justify-content-center align-items-center flex-column" */}
-
+        <div className="form-group">
           <button
-            className="btn btn-primary"
+            className="btn btn-primary w-100"
             data-testid="common_login__button-login"
             type="button"
             disabled={
@@ -90,21 +84,21 @@ function Login() {
           >
             LOGIN
           </button>
-
+        </div>
+        <div className="form-group">
           <button
-            className="btn btn-secondary"
+            className="btn btn-secondary w-100"
             data-testid="common_login__button-register"
             type="button"
             onClick={ () => navigate('/register') }
           >
             AINDA NÃO TENHO CONTA
           </button>
-
         </div>
-        {!isLogged && (
-          <h1 data-testid="common_login__element-invalid-email">{errorMsg}</h1>
-        )}
       </form>
+      {!isLogged && (
+        <h1 data-testid="common_login__element-invalid-email">{errorMsg}</h1>
+      )}
     </section>
   );
 }
