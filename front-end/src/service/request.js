@@ -3,14 +3,15 @@ import axios from 'axios';
 const api = {
   delete: {
     async deleteUser(id, authorization) {
-      const response = await axios.delete(`http://localhost:3001/users/admin/${id}`, { headers: { authorization } });
+      const response = await axios
+        .delete(`${process.env.API}/users/admin/${id}`, { headers: { authorization } });
       return response;
     },
   },
   post: {
     async newAdminRegister(userData, token) {
       const response = await axios.post(
-        'http://localhost:3001/register/admin',
+        `${process.env.API}/register/admin`,
         userData,
         { headers: { authorization: token } },
       );
@@ -18,14 +19,14 @@ const api = {
     },
     async login(userData) {
       const response = await axios.post(
-        'http://localhost:3001/login',
+        `${process.env.API}/login`,
         userData,
       );
       return response;
     },
     async register(userData) {
       const response = await axios.post(
-        'http://localhost:3001/register',
+        `${process.env.API}/register`,
         userData,
       );
       return response;
@@ -33,7 +34,7 @@ const api = {
 
     async createSale(token, saleData) {
       const response = await axios.post(
-        'http://localhost:3001/sales',
+        `${process.env.API}/sales`,
         saleData,
         { headers: { authorization: token } },
       );
@@ -42,15 +43,15 @@ const api = {
   },
   get: {
     async getAllProducts() {
-      const response = await axios.get('http://localhost:3001/products');
+      const response = await axios.get(`${process.env.API}/products`);
       return response;
     },
     async getById(id) {
-      const response = await axios.get(`http://localhost:3001/products/${id}`);
+      const response = await axios.get(`${process.env.API}/products/${id}`);
       return response;
     },
     async getSales(token) {
-      const response = await axios.get('http://localhost:3001/sales/', {
+      const response = await axios.get(`${process.env.API}/sales/`, {
         headers: {
           authorization: `${token}`,
         },
@@ -58,7 +59,7 @@ const api = {
       return response;
     },
     async getSaleById(id, token) {
-      const response = await axios.get(`http://localhost:3001/sales/${id}`, {
+      const response = await axios.get(`${process.env.API}/sales/${id}`, {
         headers: {
           authorization: `${token}`,
         },
@@ -66,22 +67,23 @@ const api = {
       return response;
     },
     async getAllUsers() {
-      const response = await axios.get('http://localhost:3001/users');
+      const response = await axios.get(`${process.env.API}/users`);
       return response;
     },
     async getAllSaleOrders() {
-      const response = await axios.get('http://localhost:3001/seller/orders');
+      const response = await axios.get(`${process.env.API}/seller/orders`);
       return response;
     },
   },
   put: {
     async updateStatus(token, status, id) {
       const response = await axios.put(
-        `http://localhost:3001/sales/${id}`,
+        `${process.env.API}/sales/${id}`,
         { status },
-        { headers: {
-          authorization: token,
-        },
+        {
+          headers: {
+            authorization: token,
+          },
         },
       );
       return response;
