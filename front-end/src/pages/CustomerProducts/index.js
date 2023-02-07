@@ -24,18 +24,15 @@ function CustomerProducts() {
     return 0;
   };
 
-  const handleCard = (storage) => {
+  const handleCard = () => {
+    const storage = JSON.parse(localStorage.getItem('carrinho'));
     getTotal(storage);
   };
 
   useEffect(() => {
     loadProducts();
+    handleCard();
   }, []);
-
-  useEffect(() => {
-    handleCard(JSON.parse(localStorage.getItem('carrinho')));
-  }, []);
-
   return (
     <>
       <NavBar />
