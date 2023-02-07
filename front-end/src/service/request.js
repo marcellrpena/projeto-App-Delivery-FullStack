@@ -1,5 +1,7 @@
 import axios from 'axios';
+import process from 'dotenv';
 
+console.log(process.env.API);
 const api = {
   delete: {
     async deleteUser(id, authorization) {
@@ -22,6 +24,7 @@ const api = {
         `${process.env.API}/login`,
         userData,
       );
+      console.log(process.env.API);
       return response;
     },
     async register(userData) {
