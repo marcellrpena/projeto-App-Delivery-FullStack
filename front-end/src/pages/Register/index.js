@@ -82,9 +82,9 @@ function Register() {
           </label>
         </div>
 
-        <div className="d-flex justify-content-center flex-row w-25 gap-3">
+        <div className="d-flex flex-column w-25 gap-3">
           <button
-            className="btn btn-primary w-100"
+            className="btn btn-primary w-150"
             data-testid="common_register__button-register"
             type="button"
             disabled={
@@ -97,7 +97,7 @@ function Register() {
             CADASTRAR
           </button>
           <button
-            className="btn btn-secondary w-100"
+            className="btn btn-secondary w-150"
             type="button"
             onClick={ () => navigate('/login') }
           >
