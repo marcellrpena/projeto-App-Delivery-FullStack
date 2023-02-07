@@ -5,7 +5,7 @@ module.exports = {
         id: 1,
         name: 'Skol Lata 250ml',
         price: 2.20,
-        url_image: 'http://localhost:3001/images/skol_lata_350ml.jpg',
+        url_image: `${process.env.REACT_APP_API_PORT}/images/skol_lata_350ml.jpg`,
       },
       {
         id: 2,
