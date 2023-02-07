@@ -63,6 +63,7 @@ function Register() {
               onChange={ (e) => setEmail(e.target.value) }
               placeholder="E-mail"
             />
+            <p>email válido: xxxx@xxxx.com</p>
           </label>
 
           <label htmlFor="password" className="form-label">
