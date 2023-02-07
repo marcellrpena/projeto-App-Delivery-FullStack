@@ -1,3 +1,4 @@
+
 module.exports = {
   up: async (queryInterface, _Sequelize) => queryInterface.bulkInsert('products',
     [
@@ -5,7 +6,7 @@ module.exports = {
         id: 1,
         name: 'Skol Lata 250ml',
         price: 2.20,
-        url_image: `${process.env.REACT_APP_API_PORT}/images/skol_lata_350ml.jpg`,
+        url_image: '../../../public/images/skol_lata_350ml.jpg',
       },
       {
         id: 2,
