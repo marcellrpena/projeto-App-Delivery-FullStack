@@ -53,7 +53,6 @@ function Register() {
 
           <label htmlFor="email" className="form-label">
             Email
-
             <input
               id="email"
               data-testid="common_register__input-email"
@@ -68,7 +67,6 @@ function Register() {
 
           <label htmlFor="password" className="form-label">
             Password
-
             <input
               id="password"
               data-testid="common_register__input-password"
@@ -81,8 +79,7 @@ function Register() {
             <p>mínimo 8 caracteres</p>
           </label>
         </div>
-
-        <div className="d-flex form-group flex-column w-25 gap-3">
+        <div className="d-flex form-group flex-column gap-3">
           <button
             className="btn btn-primary w-150"
             data-testid="common_register__button-register"
