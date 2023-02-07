@@ -22,13 +22,6 @@ module.exports = {
         password: '1c37466c159755ce1fa181bd247cb925',
         role: 'customer',
       },
-      {
-        id: 4,
-        name: 'Cliente Zé Birita',
-        email: 'admin@admin.com',
-        password: 'e10adc3949ba59abbe56e057f20f883e',
-        role: 'customer',
-      },
     ],
     {}),
   down: async (queryInterface, _Sequelize) => queryInterface.bulkDelete('users', null, {}),
