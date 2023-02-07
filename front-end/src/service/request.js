@@ -24,7 +24,7 @@ const api = {
         '/login',
         userData,
       );
-      console.log(process.env.API);
+      console.log(process.env.REACT_APP_API_PORT);
       return response;
     },
     async register(userData) {
