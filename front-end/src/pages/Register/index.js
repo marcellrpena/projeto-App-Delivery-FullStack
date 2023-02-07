@@ -95,7 +95,6 @@ function Register() {
           </button>
         </div>
         <div className="form-group">
-
           <button
             className="btn btn-secondary w-100"
             type="button"
