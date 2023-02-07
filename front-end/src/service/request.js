@@ -24,7 +24,7 @@ const api = {
         '/login',
         userData,
       );
-      console.log(env.API);
+      console.log(process.env.API);
       return response;
     },
     async register(userData) {
