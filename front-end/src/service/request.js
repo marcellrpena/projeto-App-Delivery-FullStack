@@ -21,7 +21,7 @@ const api = {
     },
     async login(userData) {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_PORT}/login`,
+        `${process.env.REACT_APP_API_PORT}login`,
         userData,
       );
       console.log(process.env.REACT_APP_API_PORT);
