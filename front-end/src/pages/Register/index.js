@@ -82,7 +82,7 @@ function Register() {
           </label>
         </div>
 
-        <div className="d-flex flex-row w-25 gap-3">
+        <div className="d-flex justify-content-center flex-row w-25 gap-3">
           <button
             className="btn btn-primary w-100"
             data-testid="common_register__button-register"
