@@ -1,5 +1,6 @@
 import axios from 'axios';
-import process from 'dotenv';
+
+require('dotenv').config();
 
 console.log(process.env.API);
 const api = {
