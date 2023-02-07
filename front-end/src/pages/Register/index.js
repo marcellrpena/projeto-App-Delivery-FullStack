@@ -42,7 +42,7 @@ function Register() {
             <input
               id="name"
               data-testid="common_register__input-name"
-              className="form-control"
+              className="form-control w-100"
               type="email"
               value={ name }
               onChange={ (e) => setName(e.target.value) }
@@ -57,7 +57,7 @@ function Register() {
             <input
               id="email"
               data-testid="common_register__input-email"
-              className="form-control"
+              className="form-control w-100"
               type="email"
               value={ email }
               onChange={ (e) => setEmail(e.target.value) }
@@ -72,7 +72,7 @@ function Register() {
             <input
               id="password"
               data-testid="common_register__input-password"
-              className="form-control"
+              className="form-control w-100"
               type="password"
               value={ password }
               onChange={ (e) => setPassword(e.target.value) }
@@ -85,7 +85,7 @@ function Register() {
         <div className="d-flex flex-column w-25 gap-3">
 
           <button
-            className="btn btn-primary"
+            className="btn btn-primary w-100"
             data-testid="common_register__button-register"
             type="button"
             disabled={
@@ -96,6 +96,13 @@ function Register() {
             onClick={ () => register() }
           >
             CADASTRAR
+          </button>
+          <button
+            className="btn btn-primary w-100"
+            type="button"
+            onClick={ () => navigate('/login') }
+          >
+            VOLTAR
           </button>
         </div>
 
