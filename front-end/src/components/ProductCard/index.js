@@ -63,7 +63,7 @@ export default function ProductCard({
         <img
           className="card-img-top"
           data-testid={ `customer_products__img-card-bg-image-${id}` }
-          src={ image }
+          src={ `${process.env.REACT_APP_API_PORT}${image}` }
           alt=""
         />
       </div>
