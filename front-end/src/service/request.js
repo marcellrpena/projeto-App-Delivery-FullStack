@@ -21,10 +21,10 @@ const api = {
     },
     async login(userData) {
       const response = await axios.post(
-        `${process.env.API}/login`,
+        '/login',
         userData,
       );
-      console.log(process.env.API);
+      console.log(env.API);
       return response;
     },
     async register(userData) {
