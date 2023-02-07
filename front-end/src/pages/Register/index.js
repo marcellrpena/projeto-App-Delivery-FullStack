@@ -32,7 +32,7 @@ function Register() {
       style={ { minHeight: '100vh', backgroundColor: '#fafafa' } }
       className="d-flex align-items-center justify-content-center"
     >
-      <form className="row gy-2 gx-3 align-items-center justify-content-center">
+      <form className="d-flex gap-3 flex-column">
         <h1 className="display-5 text-center">SIGN UP</h1>
 
         <div className="d-flex justify-content-center flex-column align-items-center">
@@ -79,7 +79,7 @@ function Register() {
             <p>mínimo 8 caracteres</p>
           </label>
         </div>
-        <div className="d-flex form-group w-100 flex-column gap-3">
+        <div className="form-group w-100 flex-column gap-3">
           <button
             className="btn btn-primary w-100"
             data-testid="common_register__button-register"
