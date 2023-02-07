@@ -48,6 +48,7 @@ function Register() {
               onChange={ (e) => setName(e.target.value) }
               placeholder="Seu Nome"
             />
+            <p>mínimo 12 caracteres</p>
           </label>
 
           <label htmlFor="email" className="form-label">
@@ -76,6 +77,7 @@ function Register() {
               onChange={ (e) => setPassword(e.target.value) }
               placeholder="*******"
             />
+            <p>mínimo 8 caracteres</p>
           </label>
         </div>
 
