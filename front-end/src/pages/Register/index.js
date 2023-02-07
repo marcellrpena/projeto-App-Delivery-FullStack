@@ -79,7 +79,7 @@ function Register() {
             <p>mínimo 8 caracteres</p>
           </label>
         </div>
-        <div className="form-group w-100 flex-column gap-3">
+        <div className="form-group">
           <button
             className="btn btn-primary w-100"
             data-testid="common_register__button-register"
@@ -93,6 +93,9 @@ function Register() {
           >
             CADASTRAR
           </button>
+        </div>
+        <div className="form-group">
+
           <button
             className="btn btn-secondary w-100"
             type="button"
@@ -101,7 +104,6 @@ function Register() {
             VOLTAR
           </button>
         </div>
-
         { !isLogged && (
           <h1 data-testid="common_register__element-invalid_register">
             INVALID USER OR EMAIL
