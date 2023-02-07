@@ -79,9 +79,9 @@ function Register() {
             <p>mínimo 8 caracteres</p>
           </label>
         </div>
-        <div className="d-flex form-group flex-column gap-3">
+        <div className="d-flex form-group w-100 flex-column gap-3">
           <button
-            className="btn btn-primary w-150"
+            className="btn btn-primary w-100"
             data-testid="common_register__button-register"
             type="button"
             disabled={
@@ -94,7 +94,7 @@ function Register() {
             CADASTRAR
           </button>
           <button
-            className="btn btn-secondary w-150"
+            className="btn btn-secondary w-100"
             type="button"
             onClick={ () => navigate('/login') }
           >
