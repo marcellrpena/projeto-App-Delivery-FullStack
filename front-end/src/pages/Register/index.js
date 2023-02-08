@@ -19,9 +19,9 @@ function Register() {
       await api.post.register({ name, email, password });
       const { data } = await api.post.login({ email, password });
       localStorage.setItem('user', JSON.stringify(data)).then(() => {
-        navigate('/customer/products');
         setIsLogged(true);
       });
+      navigate('/customer/products');
     } catch (error) {
       setIsLogged(false);
     }
