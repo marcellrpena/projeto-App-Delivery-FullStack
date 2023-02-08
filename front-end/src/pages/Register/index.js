@@ -48,7 +48,7 @@ function Register() {
               onChange={ (e) => setName(e.target.value) }
               placeholder="Seu Nome"
             />
-            <p>mínimo 12 caracteres</p>
+            <p className="m-0">mínimo 12 caracteres</p>
           </label>
 
           <label htmlFor="email" className="form-label">
@@ -62,7 +62,7 @@ function Register() {
               onChange={ (e) => setEmail(e.target.value) }
               placeholder="E-mail"
             />
-            <p>email válido: xxxx@xxxx.com</p>
+            <p className="m-0">email válido: xxxx@xxxx.com</p>
           </label>
 
           <label htmlFor="password" className="form-label">
@@ -76,7 +76,7 @@ function Register() {
               onChange={ (e) => setPassword(e.target.value) }
               placeholder="*******"
             />
-            <p>mínimo 8 caracteres</p>
+            <p className="m-0">mínimo 8 caracteres</p>
           </label>
         </div>
         <div className="form-group">
