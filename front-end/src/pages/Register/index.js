@@ -5,7 +5,7 @@ import api from '../../service/request';
 function Register() {
   const userEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  const MAX_PASSWORD_LENGTH = 6;
+  const MAX_PASSWORD_LENGTH = 8;
   const MAX_NAME_LENGTH = 12;
 
   const navigate = useNavigate();
@@ -20,8 +20,8 @@ function Register() {
       const { data } = await api.post.login({ email, password });
       localStorage.setItem('user', JSON.stringify(data)).then(() => {
         navigate('/customer/products');
+        setIsLogged(true);
       });
-      setIsLogged(true);
     } catch (error) {
       setIsLogged(false);
     }
