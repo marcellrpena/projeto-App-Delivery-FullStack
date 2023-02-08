@@ -32,7 +32,7 @@ function Register() {
       style={ { minHeight: '100vh', backgroundColor: '#fafafa' } }
       className="d-flex align-items-center justify-content-center"
     >
-      <form className="d-flex gap-3 flex-column">
+      <form className="d-flex gap-2 flex-column">
         <h1 className="display-5 text-center">SIGN UP</h1>
 
         <div className="d-flex justify-content-center flex-column align-items-center">
@@ -48,7 +48,7 @@ function Register() {
               onChange={ (e) => setName(e.target.value) }
               placeholder="Seu Nome"
             />
-            <p className="mb-0">mínimo 12 caracteres</p>
+            <p className="mb-0 text-secondary">mínimo 12 caracteres</p>
           </label>
 
           <label htmlFor="email" className="form-label">
@@ -62,7 +62,7 @@ function Register() {
               onChange={ (e) => setEmail(e.target.value) }
               placeholder="E-mail"
             />
-            <p className="mb-0">email válido: xxxx@xxxx.com</p>
+            <p className="mb-0 text-secondary">email válido: xxxx@xxxx.com</p>
           </label>
 
           <label htmlFor="password" className="form-label">
@@ -76,7 +76,7 @@ function Register() {
               onChange={ (e) => setPassword(e.target.value) }
               placeholder="*******"
             />
-            <p className="mb-0">mínimo 8 caracteres</p>
+            <p className="mb-0 text-secondary">mínimo 8 caracteres</p>
           </label>
         </div>
         <div className="form-group">
