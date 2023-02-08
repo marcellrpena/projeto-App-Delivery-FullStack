@@ -18,11 +18,12 @@ function Register() {
     try {
       await api.post.register({ name, email, password });
       const { data } = await api.post.login({ email, password });
-      localStorage.setItem('user', JSON.stringify(data)).then(() => {
-        setIsLogged(true);
-      });
+      console.log(data);
+      localStorage.setItem('user', JSON.stringify(data));
+      setIsLogged(true);
       navigate('/customer/products');
     } catch (error) {
+      console.log(teste);
       setIsLogged(false);
     }
   };
