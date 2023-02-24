@@ -11,6 +11,7 @@ function Register() {
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [role, setRole] = useState('');
   const [password, setPassword] = useState('');
   const [isLogged, setIsLogged] = useState(true);
 
@@ -77,6 +78,24 @@ function Register() {
               placeholder="*******"
             />
             <p className="mb-0 text-secondary">mínimo 8 caracteres</p>
+          </label>
+          <label htmlFor="user-type" className="form-label">
+            User Type
+            <input
+              id="user-type"
+              className="form-control w-100"
+              type="radio"
+              value="seller"
+              onChange={ (e) => setRole(e.target.value) }
+            />
+            <input
+              id="user-type"
+              className="form-control w-100"
+              type="radio"
+              value="customer"
+              onChange={ (e) => setRole(e.target.value) }
+            />
+            <p className="mb-0 text-secondary">Selecione o Tipo de usuário</p>
           </label>
         </div>
         <div className="form-group">
