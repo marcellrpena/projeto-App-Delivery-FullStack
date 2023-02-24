@@ -85,7 +85,7 @@ function Register() {
               className="form-control w-100"
               type="radio"
               value="seller"
-              onChange={ (e) => setRole(e.target.value) }
+              onClick={ (e) => setRole(e.target.value) }
             />
             Vendedor
           </label>
@@ -95,7 +95,7 @@ function Register() {
               className="form-control w-100"
               type="radio"
               value="customer"
-              onChange={ (e) => setRole(e.target.value) }
+              onClick={ (e) => setRole(e.target.value) }
             />
             Comprador
           </label>
