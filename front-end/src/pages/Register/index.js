@@ -101,7 +101,6 @@ function Register() {
               name="user-type"
               id="customer"
               autoComplete="off"
-              defaultChecked
               onClick={ (e) => setRole(e.target.value) }
             />
             <label
@@ -121,7 +120,8 @@ function Register() {
             disabled={
               !(password.length >= MAX_PASSWORD_LENGTH
                 && userEmail.test(email)
-                && name.length >= MAX_NAME_LENGTH)
+                && name.length >= MAX_NAME_LENGTH
+                && role)
             }
             onClick={ () => register() }
           >
