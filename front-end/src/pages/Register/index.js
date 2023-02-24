@@ -17,11 +17,13 @@ function Register() {
 
   const register = async () => {
     try {
+      console.log(role);
       await api.post.register({ name, email, password, role });
       const { data } = await api.post.login({ email, password });
       localStorage.setItem('user', JSON.stringify(data));
       setIsLogged(true);
-      navigate('/customer/products');
+      const path = role === 'seller' ? '/seller/orders' : '/customer/products';
+      navigate(path);
     } catch (error) {
       setIsLogged(false);
     }
