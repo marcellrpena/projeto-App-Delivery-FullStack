@@ -30,7 +30,7 @@ const login = async (email, password) => {
 };
 
 const newUser = async (body) => {
-  const role = 'customer';
+  const role = body.role;
   const password = md5(body.password);
 
   const findName = await findUserByName(body.name);
