@@ -86,23 +86,23 @@ function Register() {
             <input
               type="radio"
               className="btn-check"
-              name="seller"
-              // value="customer"
+              name="user-type"
+              value="customer"
               id="seller"
               autoComplete="off"
-              onClick={ (e) => setRole(e.target.name) }
+              onClick={ (e) => setRole(e.target.value) }
             />
             <label className="btn btn-outline-primary" htmlFor="seller">Vendedor</label>
 
             <input
               type="radio"
               className="btn-check"
-              // value="custommer"
-              name="customer"
+              value="custommer"
+              name="user-type"
               id="customer"
               autoComplete="off"
               checked
-              onClick={ (e) => setRole(e.target.name) }
+              onClick={ (e) => setRole(e.target.value) }
             />
             <label
               className="btn btn-outline-primary"
