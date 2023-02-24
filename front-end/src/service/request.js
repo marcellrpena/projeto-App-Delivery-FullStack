@@ -74,8 +74,13 @@ const api = {
       const response = await axios.get(`${process.env.REACT_APP_API_PORT}/users`);
       return response;
     },
-    async getAllSaleOrders() {
-      const response = await axios.get(`${process.env.REACT_APP_API_PORT}/seller/orders`);
+    async getAllSaleOrders(token) {
+      const response = await axios
+        .get(`${process.env.REACT_APP_API_PORT}/seller/orders`, {
+          headers: {
+            authorization: `${token}`,
+          },
+        });
       return response;
     },
   },

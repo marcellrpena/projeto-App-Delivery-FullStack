@@ -1,7 +1,7 @@
 const { Sale } = require('../database/models');
 
-const getAllBySeller = async () => {
-  const orders = await Sale.findAll();
+const getAllBySeller = async (sellerId) => {
+  const orders = await Sale.findAll({ where: { sellerId } });
   return orders;
 };
 
