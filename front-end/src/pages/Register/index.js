@@ -17,7 +17,7 @@ function Register() {
 
   const register = async () => {
     try {
-      await api.post.register({ name, email, password });
+      await api.post.register({ name, email, password, role });
       const { data } = await api.post.login({ email, password });
       localStorage.setItem('user', JSON.stringify(data));
       setIsLogged(true);
@@ -79,24 +79,27 @@ function Register() {
             />
             <p className="mb-0 text-secondary">mínimo 8 caracteres</p>
           </label>
-          <label htmlFor="user-type" className="form-label">
-            User Type
+          <label htmlFor="user-seller" className="form-label">
             <input
-              id="user-type"
+              id="user-seller"
               className="form-control w-100"
               type="radio"
               value="seller"
               onChange={ (e) => setRole(e.target.value) }
             />
+            Vendedor
+          </label>
+          <label htmlFor="user-customer" className="form-label">
             <input
-              id="user-type"
+              id="user-customer"
               className="form-control w-100"
               type="radio"
               value="customer"
               onChange={ (e) => setRole(e.target.value) }
             />
-            <p className="mb-0 text-secondary">Selecione o Tipo de usuário</p>
+            Comprador
           </label>
+          <p className="mb-0 text-secondary">Selecione o Tipo de usuário</p>
         </div>
         <div className="form-group">
           <button
