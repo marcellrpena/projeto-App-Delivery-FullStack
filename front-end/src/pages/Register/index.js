@@ -101,7 +101,7 @@ function Register() {
               name="user-type"
               id="customer"
               autoComplete="off"
-              checked
+              defaultChecked
               onClick={ (e) => setRole(e.target.value) }
             />
             <label
