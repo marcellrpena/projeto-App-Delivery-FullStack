@@ -87,7 +87,7 @@ function Register() {
               type="radio"
               className="btn-check"
               name="user-type"
-              value="customer"
+              value="seller"
               id="seller"
               autoComplete="off"
               onClick={ (e) => setRole(e.target.value) }
