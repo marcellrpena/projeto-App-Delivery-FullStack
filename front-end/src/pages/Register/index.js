@@ -23,7 +23,6 @@ function Register() {
       setIsLogged(true);
       navigate('/customer/products');
     } catch (error) {
-      console.log(teste);
       setIsLogged(false);
     }
   };
@@ -79,26 +78,37 @@ function Register() {
             />
             <p className="mb-0 text-secondary">mínimo 8 caracteres</p>
           </label>
-          <label htmlFor="user-seller" className="form-label">
+          <div
+            className="btn-group"
+            role="group"
+            aria-label="Basic radio toggle button group"
+          >
             <input
-              id="user-seller"
-              className="form-control w-100"
               type="radio"
-              value="seller"
-              onClick={ (e) => setRole(e.target.value) }
-            />
-            Vendedor
-          </label>
-          <label htmlFor="user-customer" className="form-label">
-            <input
-              id="user-customer"
-              className="form-control w-100"
-              type="radio"
+              className="btn-check"
               value="customer"
+              id="seller"
+              autoComplete="off"
               onClick={ (e) => setRole(e.target.value) }
             />
-            Comprador
-          </label>
+            <label className="btn btn-outline-primary" htmlFor="seller">Vendedor</label>
+
+            <input
+              type="radio"
+              className="btn-check"
+              value="custommer"
+              id="customer"
+              autoComplete="off"
+              checked
+              onClick={ (e) => setRole(e.target.value) }
+            />
+            <label
+              className="btn btn-outline-primary"
+              htmlFor="customer"
+            >
+              Comprador
+            </label>
+          </div>
           <p className="mb-0 text-secondary">Selecione o Tipo de usuário</p>
         </div>
         <div className="form-group">
@@ -108,8 +118,8 @@ function Register() {
             type="button"
             disabled={
               !(password.length >= MAX_PASSWORD_LENGTH
-            && userEmail.test(email)
-            && name.length >= MAX_NAME_LENGTH)
+                && userEmail.test(email)
+                && name.length >= MAX_NAME_LENGTH)
             }
             onClick={ () => register() }
           >
@@ -125,7 +135,7 @@ function Register() {
             VOLTAR
           </button>
         </div>
-        { !isLogged && (
+        {!isLogged && (
           <h1 data-testid="common_register__element-invalid_register">
             INVALID USER OR EMAIL
           </h1>
