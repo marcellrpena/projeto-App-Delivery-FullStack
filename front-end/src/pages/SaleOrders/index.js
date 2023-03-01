@@ -7,7 +7,8 @@ export default function SaleOrders() {
   const [listSaleOrders, setListSaleOrders] = useState([]);
 
   const requestApi = async () => {
-    const { data } = await api.get.getAllSaleOrders();
+    const getStorage = JSON.parse(localStorage.getItem('user'));
+    const { data } = await api.get.getAllSaleOrders(getStorage.token);
     return setListSaleOrders(data);
   };
 
