@@ -7,7 +7,7 @@ services:
     ports:
       - 3307:3306
     environment:
-      - MYSQL_ROOT_PASSWORD=123456
+     # - MYSQL_ROOT_PASSWORD=123456
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 10s
@@ -27,9 +27,9 @@ services:
       database:
         condition: service_healthy
     environment:
-      - HOSTNAME=database
-      - MYSQL_HOST=database
-      - MYSQL_PORT=3306
+     # - HOSTNAME=database
+     # - MYSQL_HOST=database
+     # - MYSQL_PORT=3306
     healthcheck:
       test: ["CMD", "lsof", "-t", "-i:3001"]
       timeout: 10s
