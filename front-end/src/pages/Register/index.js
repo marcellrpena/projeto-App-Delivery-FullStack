@@ -94,7 +94,14 @@ function Register() {
               autoComplete="off"
               onClick={ (e) => setRole(e.target.value) }
             />
-            <label className="btn btn-outline-primary" htmlFor="seller">Vendedor</label>
+            // eslint-disable-next-line jsx-a11y/label-has-associated-control
+            <label
+              className="btn btn-outline-primary"
+              htmlFor="user-type"
+            >
+              Vendedor
+
+            </label>
 
             <input
               type="radio"
