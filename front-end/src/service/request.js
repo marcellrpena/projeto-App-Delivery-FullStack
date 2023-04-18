@@ -1,12 +1,14 @@
 import axios from 'axios';
 
 // require('dotenv').config();
+const HOST = process.env.REACT_APP_API_HOST || 'localhost';
+const PROTOCOL = process.env.REACT_APP_API_PROTOCOL || 'http';
 const api = {
   delete: {
     async deleteUser(id, authorization) {
       const response = await axios
         .delete(
-          `${process.env.REACT_APP_API_PORT}/users/admin/${id}`,
+          `${PROTOCOL}://${HOST}/users/admin/${id}`,
           { headers: { authorization } },
         );
       return response;
@@ -15,7 +17,7 @@ const api = {
   post: {
     async newAdminRegister(userData, token) {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_PORT}/register/admin`,
+        `${PROTOCOL}://${HOST}/register/admin`,
         userData,
         { headers: { authorization: token } },
       );
@@ -23,14 +25,14 @@ const api = {
     },
     async login(userData) {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_PORT}/login`,
+        `${PROTOCOL}://${HOST}/login`,
         userData,
       );
       return response;
     },
     async register(userData) {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_PORT}/register`,
+        `${PROTOCOL}://${HOST}/register`,
         userData,
       );
       return response;
@@ -38,7 +40,7 @@ const api = {
 
     async createSale(token, saleData) {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_PORT}/sales`,
+        `${PROTOCOL}://${HOST}/sales`,
         saleData,
         { headers: { authorization: token } },
       );
@@ -47,15 +49,15 @@ const api = {
   },
   get: {
     async getAllProducts() {
-      const response = await axios.get(`${process.env.REACT_APP_API_PORT}/products`);
+      const response = await axios.get(`${PROTOCOL}://${HOST}/products`);
       return response;
     },
     async getById(id) {
-      const response = await axios.get(`${process.env.REACT_APP_API_PORT}/products/${id}`);
+      const response = await axios.get(`${PROTOCOL}://${HOST}/products/${id}`);
       return response;
     },
     async getSales(token) {
-      const response = await axios.get(`${process.env.REACT_APP_API_PORT}/sales/`, {
+      const response = await axios.get(`${PROTOCOL}://${HOST}/sales/`, {
         headers: {
           authorization: `${token}`,
         },
@@ -63,7 +65,7 @@ const api = {
       return response;
     },
     async getSaleById(id, token) {
-      const response = await axios.get(`${process.env.REACT_APP_API_PORT}/sales/${id}`, {
+      const response = await axios.get(`${PROTOCOL}://${HOST}/sales/${id}`, {
         headers: {
           authorization: `${token}`,
         },
@@ -71,12 +73,12 @@ const api = {
       return response;
     },
     async getAllUsers() {
-      const response = await axios.get(`${process.env.REACT_APP_API_PORT}/users`);
+      const response = await axios.get(`${PROTOCOL}://${HOST}/users`);
       return response;
     },
     async getAllSaleOrders(token) {
       const response = await axios
-        .get(`${process.env.REACT_APP_API_PORT}/seller/orders`, {
+        .get(`${PROTOCOL}://${HOST}/seller/orders`, {
           headers: {
             authorization: `${token}`,
           },
@@ -87,7 +89,7 @@ const api = {
   put: {
     async updateStatus(token, status, id) {
       const response = await axios.put(
-        `${process.env.REACT_APP_API_PORT}/sales/${id}`,
+        `${PROTOCOL}://${HOST}/sales/${id}`,
         { status },
         {
           headers: {
