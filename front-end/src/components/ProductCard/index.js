@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 
 const HOST = process.env.REACT_APP_API_HOST || 'localhost';
 const PROTOCOL = process.env.REACT_APP_API_PROTOCOL || 'https';
-console.log(HOST, PROTOCOL);
 
 export default function ProductCard({
   id,
