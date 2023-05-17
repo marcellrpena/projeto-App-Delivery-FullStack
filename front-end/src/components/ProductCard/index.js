@@ -1,6 +1,9 @@
 import PropTypes, { string, number } from 'prop-types';
 import { useState, useEffect } from 'react';
 
+const HOST = process.env.REACT_APP_API_HOST || 'localhost';
+const PROTOCOL = process.env.REACT_APP_API_PROTOCOL || 'https';
+
 export default function ProductCard({
   id,
   name,
@@ -63,7 +66,7 @@ export default function ProductCard({
         <img
           className="card-img-top"
           data-testid={ `customer_products__img-card-bg-image-${id}` }
-          src={ `${process.env.REACT_APP_API_PORT}${image}` }
+          src={ `${PROTOCOL}://${HOST}${image}` }
           alt=""
         />
       </div>
