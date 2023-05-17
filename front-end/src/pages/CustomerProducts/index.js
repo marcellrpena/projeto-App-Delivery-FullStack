@@ -12,6 +12,7 @@ function CustomerProducts() {
 
   async function loadProducts() {
     await api.get.getAllProducts().then(({ data }) => {
+      console.log(data);
       setProducts(data);
     });
   }
