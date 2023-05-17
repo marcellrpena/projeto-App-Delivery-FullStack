@@ -1,6 +1,8 @@
 import PropTypes, { string, number } from 'prop-types';
 import { useState, useEffect } from 'react';
 
+require('dotenv').config();
+
 const HOST = process.env.REACT_APP_API_HOST || 'localhost';
 const PROTOCOL = process.env.REACT_APP_API_PROTOCOL || 'https';
 
